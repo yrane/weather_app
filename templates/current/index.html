@@ -1,0 +1,23 @@
+<html>
+<h1>Current weather</h1>
+<body OnLoad="document.myweather.city.focus();">
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+{% csrf_token %}
+<form action="{% url 'current:result' %}" method="get" name="myweather">
+
+
+    City: <input type="text" name="city" id="city" placeholder="New York" />
+    OR
+    Zip: <input type="text" name="zip" id="zip" placeholder="61801"/>
+    <br>
+    <br>
+    Unit:
+    <select name="unit">
+      <option value="metric">Metric</option>
+      <option value="imp">Imperial</option>
+    </select>
+<br><br>
+<input type="submit" value="Submit" />
+</form>
+</html>

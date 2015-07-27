@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.views.generic import TemplateView
 
 urlpatterns = [
+    url('^$', TemplateView.as_view(template_name='current/index.html')),
+    url(r'^current/', include('weather.current.urls', namespace="current")),
     url(r'^admin/', include(admin.site.urls)),
 ]
