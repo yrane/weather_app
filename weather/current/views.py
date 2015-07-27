@@ -19,15 +19,13 @@ def result(request):
 
     if vals['city'] != "" and vals['zip'] != "":
         return HttpResponse("please enter only one of city or zipcode \
-        <br><a href='index.html'>go back</a> ")
+        <br><a href='../'>go back</a> ")
     curr = WeatherAPI()
     json_str = curr.current(vals['city'], vals['zip'], vals['unit'])
     data = json.loads(json_str)
 
     if str(data['cod']) != '200':
-        return HttpResponse(data['message'])
-        return HttpResponse("please enter only one of city or zipcode \
-        <br><a href='index.html'>go back</a> ")
+        return HttpResponse(str(data['message']) + "<br><a href='../'>go back</a> ")
     print data
     if vals['unit'] == 'metric':
         units = '°C'
