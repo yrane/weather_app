@@ -17,6 +17,10 @@ import json
 def result(request):
     vals = request.GET
 
+    if vals['city'] == "" and vals['zip'] == "":
+        return HttpResponse("You have not entered anything! Please enter City or ZipCode. \
+        <br><a href='../'>go back</a> ")
+
     if vals['city'] != "" and vals['zip'] != "":
         return HttpResponse("please enter only one of city or zipcode \
         <br><a href='../'>go back</a> ")
