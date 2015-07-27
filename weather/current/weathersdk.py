@@ -5,8 +5,6 @@ __email__ = "yrane@us.ibm.com"
 __date__ = "07/27/2015"
 __version__ = "1.0"
 
-import requests
-import sys, json
 import urllib2, urllib
 
 #later should be accepted as a parameter from user for authentication purposes
