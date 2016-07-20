@@ -6,4 +6,7 @@ A weather app using OpenWeather Current API
 - Allows the API caller to pass in a query parameter specifying in which unit the temperature should be formatted (i.e. celsius, fahrenheit, or kelvin.
 
 - Formats the returned data as a JSON object that includes: coordinates (lon / lat), current conditions (e.g. Cloudy, Sunny, etc), and current, high, and low temperatures for the current day in the requested unit.
+- 
+
+Added new line
 
